@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, List, Optional
 
+import os
 import numpy as np
 
 from unstructured.documents.elements import (
@@ -17,7 +18,7 @@ if TYPE_CHECKING:
 
 @dataclass
 class OllamaEmbeddingConfig(EmbeddingConfig):
-    base_url: str = "http://localhost:11434"
+    base_url: str = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
     model_name: str = "mxbai-embed-large"
 
 
