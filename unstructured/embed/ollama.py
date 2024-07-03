@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 class OllamaEmbeddingConfig(EmbeddingConfig):
     base_url: str = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
     model_name: str = "mxbai-embed-large"
-
+    api_key: str = 'unused'
 
 @dataclass
 class OllamaEmbeddingEncoder(BaseEmbeddingEncoder):
