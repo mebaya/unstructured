@@ -239,8 +239,11 @@ class EmbeddingConfig(BaseConfig):
                 VoyageAIEmbeddingConfig,
                 VoyageAIEmbeddingEncoder,
             )
-
-            return VoyageAIEmbeddingEncoder(config=VoyageAIEmbeddingConfig(**kwargs))
+        elif self.provider == "langchain-ollama":
+            from unstructured.embed.ollama import (
+                OllamaAIEmbeddingConfig,
+                OllamaAIEmbeddingEncoder,
+            )
         else:
             raise ValueError(f"{self.provider} not a recognized encoder")
 
