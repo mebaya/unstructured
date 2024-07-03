@@ -22,7 +22,7 @@ class OllamaEmbeddingConfig(EmbeddingConfig):
 
 
 @dataclass
-class OllamaAIEmbeddingEncoder(BaseEmbeddingEncoder):
+class OllamaEmbeddingEncoder(BaseEmbeddingEncoder):
     config: OllamaEmbeddingConfig
     _client: Optional["OllamaEmbeddings"] = field(init=False, default=None)
     _exemplary_embedding: Optional[List[float]] = field(init=False, default=None)

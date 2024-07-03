@@ -241,8 +241,8 @@ class EmbeddingConfig(BaseConfig):
             )
         elif self.provider == "langchain-ollama":
             from unstructured.embed.ollama import (
-                OllamaAIEmbeddingConfig,
-                OllamaAIEmbeddingEncoder,
+                OllamaEmbeddingConfig,
+                OllamaEmbeddingEncoder,
             )
         else:
             raise ValueError(f"{self.provider} not a recognized encoder")
