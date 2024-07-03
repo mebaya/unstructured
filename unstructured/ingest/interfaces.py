@@ -244,6 +244,7 @@ class EmbeddingConfig(BaseConfig):
                 OllamaEmbeddingConfig,
                 OllamaEmbeddingEncoder,
             )
+            return OllamaEmbeddingEncoder(config=OllamaEmbeddingConfig(**kwargs))
         else:
             raise ValueError(f"{self.provider} not a recognized encoder")
 
